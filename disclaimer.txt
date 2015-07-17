@@ -1,0 +1,37 @@
+Hey! I don't recall the SQL statement that made the table, MySQL says that i did 
+this:
+
+mysql> desc productos;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nombre | varchar(140) | NO   | UNI | NULL    |                |
+| precio | double       | NO   |     | NULL    |                |
+| stock  | int(11)      | NO   |     | NULL    |                |
+| url    | varchar(35)  | NO   | UNI | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+So... well, learn SQL :D
+
+
+Lista de cosas que no están buenas:
+  * El nombrado de funciones no mantiene una coherencia.
+  * El quoting de las strings no mantiene una coherencia (') ó ("), a veces uso 
+    un modo, y otras el otro.
+  * Las vistas tienen algo de código para pedir datos, se podrían generalizar 
+    más.
+  * Los controladores repiten código para pedir datos, se podrían agregar cosas 
+    a app/helpers/precondition.php
+  * app/inc/helpers_producto.php no debería ir ahí, tiene algo de código de las 
+    vistas.
+  * Se podría refinar _autoload().
+  * Las vistas tienen código duplicado, podría mejorarse el sistema y hacerse 
+    más modular.
+
+Usé KISSMVC porque era un microframework tan simple que podría haberlo escrito 
+yo.
+
+index.php y db_conf.php son los que tienen la configuración de todo, favor de 
+editar si se quiere probar esto.
